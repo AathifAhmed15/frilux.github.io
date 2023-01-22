@@ -1,0 +1,148 @@
+body{
+  background-color: black;
+}
+
+/* container */
+div.container{
+  padding: 0px;
+background-color: #E6E6FA;
+  font-family: 'Allerta Stencil', sans-serif;
+}
+
+/* navigation bar  */
+nav.navbar{
+background-color:#053E80;
+
+}
+
+a.navbar-brand{
+  color: #FEFFFF;
+}
+
+a.nav-link{
+  color: #FEFFFF;
+}
+
+a.active{
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+/* navigation dropdown */
+#navbardrop1{
+  color: black;
+
+}
+
+li.f-item{
+    margin-top: 30px;
+}
+
+.flink{
+  color: #17252A;
+}
+
+
+div.dropdown-menu{
+background-color: #053E80;
+padding: 0px;
+
+
+}
+
+a.dropdown-item{
+color: white;
+padding: 0px;
+margin-bottom: 10px;
+
+}
+
+a.dropdown-item:hover{
+  text-decoration: underline;
+
+}
+
+a.dropdown-item.active{
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+/* end of navigation */
+
+div.alert{
+  margin: 0px;
+  background-color: lightgrey;
+}
+
+
+/* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+  }
+
+  div.polaroid {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 30px;
+  }
+
+/* image width */
+#gal{
+  width: 300px;
+  height: 300px;
+
+}
+
+.gallery img{
+  transition: 1s;
+}
+
+.gallery img:hover{
+  transform: scale(1.15);
+}
+
+
+/* footer */
+ul.list-group{
+  list-style: none;
+}
+
+img.icon1{
+  width: 50px;
+  height: 50px;
+}
+
+h6{
+  text-align: center;
+    color: black;
+}
+
+h5{
+  text-align: center;
+}
+
+div.jumbotron{
+  margin: 0px;
+  background-color: #E6E6FA;
+}
+
+a:hover{
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+a.alink:hover{
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+
+#footer{
+  background-color: #053E80;
+  color: white;
+}
+
+#footertext{
+  color: white;
+}

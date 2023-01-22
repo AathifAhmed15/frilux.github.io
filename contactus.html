@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact Us page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/customcontactus.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<!--start of container-->
+<div class="container">
+  <!--start of navigation bar-->
+<nav class="navbar navbar-expand-sm ">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">F R I L U X <img src="pictures/icon1.png" alt="">  </a>
+
+  <!-- Links -->
+  <ul class="navbar-nav float-right mx-auto">
+    <li class="nav-item">
+      <a class="nav-link " href="homepage.html">HOME</a>
+    </li>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle  " href="#" id="navbardrop" data-toggle="dropdown">
+        SUNGLASSES
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="men.html">MEN'S COLLECTION</a>
+        <a class="dropdown-item " href="women.html">WOMEN'S COLLECTION</a>
+        <a class="dropdown-item " href="kids.html">KID'S COLLECTION</a>
+        <a class="dropdown-item" href="sports.html">SPORT'S COLLECTION</a>
+        <a class="dropdown-item" href="classic.html">CLASSIC'S COLLECTION</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="gallery.html">GALLERY</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="contactus.html">CONTACT US</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="aboutus.html">ABOUT US</a>
+    </li>
+  </ul>
+</nav><!--end of navigation bar-->
+
+
+<!--start o alert-->
+<div class="alert " role="alert">
+  <h5>C O N T A C T  U S</h5>
+</div><!--end of alert-->
+
+<!--start of container-->
+<div class="container">
+  <!--start of row-->
+  <div class="row mx-auto" >
+    <!--start of column-->
+  <div class="column d-block mx-auto">
+    <!--start of card-->
+    <div class="card mx-auto" id="form1">
+  <h3>CONTACT US</h3>
+  <!--start of form-->
+  <form action="index.html" id="ContactUs" method="post">
+
+    <div class="label1">
+      <label for="">Name</label><br>
+      <input type="text"  name="Fname"  placeholder="Enter Name" id="form_fname"><br>
+      <span class="error_form" id="fname_error_message"></span>
+    </div>
+
+
+    <div class="label1">
+      <label for="">Email id</label><br>
+      <input type="email"  name="email"  placeholder="Enter Email" id="form_email" required><br>
+      <span class="error_form" id="email_error_message"></span>
+    </div>
+
+
+    <div class="label1">
+      <label for="">Phone No</label><br>
+      <input type="tel"  name="phone"  placeholder="Enter Phone No" id="form_phone" minlength="10"  maxlength="10"><br>
+      <span class="error_form" id="phone_error_message"></span>
+    </div>
+
+
+    <div class="label1">
+      <label for="">Inquiry</label><br>
+      <select class="sunglass" name="">
+        <option  id="opt" value="">Men's Sunglass</option>
+        <option  id="opt" value="">Women's Sunglass</option>
+        <option  id="opt" value="">Kid's Sunglass</option>
+        <option  id="opt" value="">sport Sunglass</option>
+        <option  id="opt" value="">Classic Sunglass</option>
+
+      </select>
+    </div>
+
+    <div class="label1">
+      <label for="">Description</label><br>
+      <input type="textarea"  name="message" style="width:230px; height:300px;" placeholder="Describe the Sunglasses" id="form_description" required><br>
+
+    </div>
+
+
+    <input type="submit" name="submit" value="SUBMIT" id="but1"><br>
+    <input type="reset" name="reset" value="RESET" id="but1">
+
+  </form><!--end of form-->
+</div><!--end of card-->
+</div><!--end of column-->
+
+<div class="column">
+<div class="mx-auto row frame">
+  <h6>location</h6>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d253295.6323426548!2d80.58740976330205!3d7.269916833898403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1631470581284!5m2!1sen!2slk" width="800px" height="500" style="border:1;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</div>
+
+
+</div><!--end of row-->
+</div><!--end of container-->
+
+
+
+<!--start of javascript-->
+
+<script type="text/javascript">
+
+//to hide the error message
+  $(function(){
+
+    $("#fname_error_message").hide();
+    $("#email_error_message").hide();
+    $("#phone_error_message").hide();
+
+
+
+    var error_fname=false;
+    var error_email=false;
+    var error_phone=false;
+
+
+    $("#form_fname").focusout(function(){
+          check_fname();
+       });
+       $("#form_email").focusout(function() {
+          check_email();
+       });
+       $("#form_phone").focusout(function() {
+          check_phone();
+       });
+
+
+
+       //function to check name
+       function check_fname() {
+              var pattern = /^[a-zA-Z]*$/;
+              var fname = $("#form_fname").val();
+              if (pattern.test(fname) && fname !== '') {
+                 $("#fname_error_message").hide();
+                 $("#form_fname").css("border-bottom","2px solid #34F458");
+              } else {
+                 $("#fname_error_message").html("Should contain only Characters");
+                 $("#fname_error_message").show();
+                 $("#form_fname").css("border-bottom","2px solid #F90A0A");
+                 error_fname = true;
+              }
+           }
+
+           //function to check email
+         function check_email() {
+            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var email = $("#form_email").val();
+            if (pattern.test(email) && email !== '') {
+               $("#email_error_message").hide();
+               $("#form_email").css("border-bottom","2px solid #34F458");
+            } else {
+               $("#email_error_message").html("Invalid Email");
+               $("#email_error_message").show();
+               $("#form_email").css("border-bottom","2px solid #F90A0A");
+               error_email = true;
+            }
+         }
+
+         ///function to check phone no
+        function check_phone() {
+          var pattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+           var phone = $("#form_phone").val()
+           if (pattern.test(phone) && phone !== '') {
+              $("#phone_error_message").hide();
+              $("#form_phone").css("border-bottom","2px solid #34F458");
+           } else {
+             $("#phone_error_message").html("Should contain only Numbers");
+             $("#phone_error_message").show();
+             $("#form_phone").css("border-bottom","2px solid #F90A0A");
+             error_phone = true;
+           }
+        }
+
+
+
+
+
+        //error modal box
+         $("#ContactUs").submit(function() {
+           error_fname = false;
+           error_email = false;
+           error_phone = false;
+
+
+           check_fname();
+           check_email();
+           check_phone();
+
+
+           if (error_fname === false && error_email === false && error_phone== false ) {
+              alert("details Submitted");
+              return true;
+           } else {
+              alert("Please Fill the form Correctly");
+              return false;
+           }
+
+
+        });
+     });
+</script>
+
+
+
+
+
+
+<!--start of jumbotron footer-->
+  <div class="jumbotron" >
+<!--start of row  footer-->
+    <div class="row">
+    <!--Start of Quick links card-->
+    <div class="card text-center mx-auto" id="foot1" style="width: 18rem;">
+  <div class="card-header" >
+    QUICK LINKS
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="f-item">
+      <a class="flink" href="homepage.html">HOME</a>
+    </li>
+    <!-- Dropdown -->
+    <li class="f-item dropdown">
+      <a class="f-link dropdown-toggle " href="#" id="navbardrop1" data-toggle="dropdown">
+        SUNGLASSES
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item alink" href="men.html">MEN'S COLLECTION</a>
+        <a class="dropdown-item alink" href="women.html">WOMEN'S COLLECTION</a>
+        <a class="dropdown-item alink" href="kids.html">KID'S COLLECTION</a>
+        <a class="dropdown-item alink" href="sports.html">SPORT'S COLLECTION</a>
+        <a class="dropdown-item alink" href="classic.html">CLASSIC'S COLLECTION</a>
+      </div>
+    </li>
+    <li class="f-item">
+      <a class="flink" href="gallery.html">GALLERY</a>
+    </li>
+    <li class="f-item">
+      <a class="flink" href="contactus.html">CONTACT US</a>
+    </li>
+    <li class="f-item">
+      <a class="flink" href="aboutus.html">ABOUT US</a>
+    </li>
+  </ul>
+</div><!--end of quick links card-->
+
+
+<!--Start of categories card-->
+  <div class="card text-center d-block mx-auto" id="foot2" style="width: 18rem;">
+  <div class="card-header" >
+  CATEGORIES
+  </div>
+  <ul class="list-group list-group-flush">
+  <li class="f-item">
+    <a class="flink" href="men.html">MEN'S COLLECTION</a>
+  </li>
+  <li class="f-item">
+    <a class="flink" href="women.html">WOMEN'S COLLECTION</a>
+  </li>
+  <li class="f-item">
+    <a class="flink" href="kids.html">KID'S COLLECTION</a>
+  </li>
+  <li class="f-item">
+    <a class="flink" href="sports.html">SPORT'S COLLECTION</a>
+  </li>
+  <li class="f-item">
+    <a class="flink" href="classic.html">CLASSIC'S COLLECTION</a>
+  </li>
+  </ul>
+</div><!--end of categories card-->
+
+
+<!--start of social media card-->
+<div class="card text-center mx-auto"  style="width: 18rem;">
+<div class="card-header">
+SOCIAL MEDIA
+</div>
+<ul class="list-group list-group-flush" >
+<li class="nav-item" >
+  <a class="icon" href="#"><img src="pictures/email.png" alt="" class="icon1"><h6 class="link1">https://www.friux.lk</h6></a>
+</li>
+<li class="nav-item" >
+  <a class="icon" href="#"><img src="pictures/facebook.png" alt="" class="icon1"><h6 class="link1">https://www.facebook/friux.com</h6></a>
+</li>
+<li class="nav-item" >
+  <a class="icon" href="#"><img src="pictures/phone.png" alt="" class="icon1"><h6 class="link1">+946612345678</h6></a>
+</li>
+<li class="nav-item" >
+  <a class="icon" href="#"><img src="pictures/insta.png" alt="" class="icon1"><h6 class="link1">https://www.instagram/friux.com</h6> </a>
+</li>
+</ul>
+</div><!--end of social media card-->
+
+
+</div><!--end of row-->
+</div><!--end of jumbotron footer-->
+
+
+<!--start of alert footer-->
+<div class="alert "  id="footer" role="alert">
+  <h6 id="footertext">&copy;2021.FRILUX.All Rights Reserved...</h6>
+</div><!--end of alert footer-->
+
+
+</div><!--end of container-->
+</body>
+</html>

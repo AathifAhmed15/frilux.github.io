@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Create New Account</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/customcreateacc.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<!--start of container-->
+<div class="container">
+  <!--start of navigation bar-->
+<nav class="navbar navbar-expand-sm ">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">F R I L U X <img src="pictures/icon1.png" alt="">  </a>
+
+  <!-- Links -->
+  <ul class="navbar-nav float-right mx-auto">
+    <li class="nav-item">
+      <a class="nav-link " href="homepage.html">HOME</a>
+    </li>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
+        SUNGLASSES
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="men.html">MEN'S COLLECTION</a>
+        <a class="dropdown-item " href="women.html">WOMEN'S COLLECTION</a>
+        <a class="dropdown-item " href="kids.html">KID'S COLLECTION</a>
+        <a class="dropdown-item" href="sports.html">SPORT'S COLLECTION</a>
+        <a class="dropdown-item" href="classic.html">CLASSIC'S COLLECTION</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="gallery.html">GALLERY</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="contactus.html">CONTACT US</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="aboutus.html">ABOUT US</a>
+    </li>
+  </ul>
+</nav><!--end of navigation bar-->
+
+
+<!--start of alert-->
+<div class="alert " role="alert">
+  <h5>C R E A T E  N E W  A C C O U N T</h5>
+</div><!--end of alert-->
+
+<!--start of container-->
+<div class="container">
+  <!--start of row-->
+  <div class="row">
+    <!--start of column-->
+  <div class="column d-block mx-auto">
+    <!--start of card-->
+    <div class="card mx-auto" id="form1">
+  <h3>Create New Account</h3>
+  <!--start of form-->
+  <form action="index.html" id="createacc" method="post">
+
+    <div class="label1">
+      <label for="">First Name</label><br>
+      <input type="text"  name="Fname"  placeholder="Enter First Name" id="form_fname"><br>
+      <span class="error_form" id="fname_error_message"></span>
+
+    </div>
+
+
+    <div class="label1">
+      <label for="">Last Name</label><br>
+      <input type="text"  name="Lname"  placeholder="Enter Last Name" id="form_sname"><br>
+      <span class="error_form" id="sname_error_message"></span>
+
+    </div>
+
+    <div class="label1">
+      <label for="">Email id</label><br>
+      <input type="email"  name="email"  placeholder="Enter Email" id="form_email" required><br>
+      <span class="error_form" id="email_error_message"></span>
+    </div>
+
+    <div class="label1">
+      <label for="">Password</label><br>
+      <input type="password"  name="password"  placeholder="Enter Password" id="form_password"><br>
+      <span class="error_form" id="password_error_message"></span>
+    </div>
+
+    <div class="label1">
+      <label for="">Re-Enter Password</label><br>
+      <input type="password"  name="password_retype"  placeholder="Enter Password Again" id="form_retype_password"><br>
+      <span class="error_form" id="re-retype_password_error_message"></span>
+    </div>
+
+    <input type="submit" name="submit" value="SUBMIT" id="but1"><br>
+    <input type="reset" name="reset" value="RESET" id="but1">
+
+  </form><!--end of form-->
+</div><!--end of card-->
+</div><!--end of column-->
+</div><!--end of row-->
+</div><!--end of container-->
+
+
+<!--start of java script-->
+<script type="text/javascript">
+
+//to hide the error message
+  $(function(){
+
+    $("#fname_error_message").hide();
+    $("#sname_error_message").hide();
+    $("#email_error_message").hide();
+    $("#password_error_message").hide();
+    $("#retype_password_error_message").hide();
+
+
+    var error_fname=false;
+    var error_sname=false;
+    var error_email=false;
+    var error_password=false;
+    var error_retype_password=false;
+
+    $("#form_fname").focusout(function(){
+          check_fname();
+       });
+       $("#form_sname").focusout(function() {
+          check_sname();
+       });
+       $("#form_email").focusout(function() {
+          check_email();
+       });
+       $("#form_password").focusout(function() {
+          check_password();
+       });
+       $("#form_retype_password").focusout(function() {
+          check_retype_password();
+       });
+
+
+       //function to check first name
+       function check_fname() {
+              var pattern = /^[a-zA-Z]*$/;
+              var fname = $("#form_fname").val();
+              if (pattern.test(fname) && fname !== '') {
+                 $("#fname_error_message").hide();
+                 $("#form_fname").css("border-bottom","2px solid #34F458");
+              } else {
+                 $("#fname_error_message").html("Should contain only Characters");
+                 $("#fname_error_message").show();
+                 $("#form_fname").css("border-bottom","2px solid #F90A0A");
+                 error_fname = true;
+              }
+           }
+
+           //function to check last name
+           function check_sname() {
+            var pattern = /^[a-zA-Z]*$/;
+            var sname = $("#form_sname").val()
+            if (pattern.test(sname) && sname !== '') {
+               $("#sname_error_message").hide();
+               $("#form_sname").css("border-bottom","2px solid #34F458");
+            } else {
+               $("#sname_error_message").html("Should contain only Characters");
+               $("#sname_error_message").show();
+               $("#form_sname").css("border-bottom","2px solid #F90A0A");
+               error_fname = true;
+            }
+         }
+
+         //function to check password
+         function check_password() {
+            var password_length = $("#form_password").val().length;
+            if (password_length < 8) {
+               $("#password_error_message").html("Atleast 8 Characters");
+               $("#password_error_message").show();
+               $("#form_password").css("border-bottom","2px solid #F90A0A");
+               error_password = true;
+            } else {
+               $("#password_error_message").hide();
+               $("#form_password").css("border-bottom","2px solid #34F458");
+            }
+         }
+
+         //function to recheck password
+         function check_retype_password() {
+            var password = $("#form_password").val();
+            var retype_password = $("#form_retype_password").val();
+            if (password == retype_password) {
+               $("#retype_password_error_message").html("Passwords Did not Matched");
+               $("#retype_password_error_message").show();
+               $("#form_retype_password").css("border-bottom","2px solid #F90A0A");
+               error_retype_password = true;
+            } else {
+               $("#retype_password_error_message").hide();
+               $("#form_retype_password").css("border-bottom","2px solid #34F458");
+            }
+         }
+
+         //function to check email
+         function check_email() {
+            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var email = $("#form_email").val();
+            if (pattern.test(email) && email !== '') {
+               $("#email_error_message").hide();
+               $("#form_email").css("border-bottom","2px solid #34F458");
+            } else {
+               $("#email_error_message").html("Invalid Email");
+               $("#email_error_message").show();
+               $("#form_email").css("border-bottom","2px solid #F90A0A");
+               error_email = true;
+            }
+         }
+
+
+         //function to create modal box
+         $("#createacc").submit(function() {
+           error_fname = false;
+           error_sname = false;
+           error_email = false;
+           error_password = false;
+           error_retype_password = false;
+
+           check_fname();
+           check_sname();
+           check_email();
+           check_password();
+           check_retype_password();
+
+           if (error_fname === false && error_sname === false && error_email === false && error_password === false && error_retype_password === false) {
+              alert("Account Created");
+              return true;
+           } else {
+              alert("Please Fill the form Correctly");
+              return false;
+           }
+
+
+        });
+     });
+</script>
+
+
+
+
+
+
+<!--start of jumbotron footer-->
+  <div class="jumbotron" >
+<!--start of row  footer-->
+    <div class="row">
+    <!--Start of Quick links card-->
+    <div class="card text-center mx-auto" id="foot1" style="width: 18rem;">
+  <div class="card-header" >
+    QUICK LINKS
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="f-item">
+      <a class="flink" href="homepage.html">HOME</a>
+    </li>
+    <!-- Dropdown -->
+    <li class="f-item dropdown">
+      <a class="f-link dropdown-toggle " href="#" id="navbardrop1" data-toggle="dropdown">
+        SUNGLASSES
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item alink" href="men.html">MEN'S COLLECTION</a>
+        <a class="dropdown-item alink" href="women.html">WOMEN'S COLLECTION</a>
+        <a class="dropdown-item alink" href="kids.html">KID'S COLLECTION</a>
+        <a class="dropdown-item alink" href="sports.html">SPORT'S COLLECTION</a>
+        <a class="dropdown-item alink" href="classic.html">CLASSIC'S COLLECTION</a>
+      </div>
+    </li>
+    <li class="f-item">
+      <a class="flink" href="gallery.html">GALLERY</a>
+    </li>
+    <li class="f-item">
+      <a class="flink" href="contactus.html">CONTACT US</a>
+    </li>
+    <li class="f-item">
+      <a class="flink" href="aboutus.html">ABOUT US</a>
+    </li>
+  </ul>
+</div><!--end of quick links card-->
+
+
+<!--Start of categories card-->
+  <div class="card text-center d-block mx-auto" id="foot2" style="width: 18rem;">
+  <div class="card-header" >
+  CATEGORIES
+  </div>
+  <ul class="list-group list-group-flush">
+  <li class="f-item">
+    <a class="flink" href="men.html">MEN'S COLLECTION</a>
+  </li>
+  <li class="f-item">
+    <a class="flink" href="women.html">WOMEN'S COLLECTION</a>
+  </li>
+  <li class="f-item">
+    <a class="flink" href="kids.html">KID'S COLLECTION</a>
+  </li>
+  <li class="f-item">
+    <a class="flink" href="sports.html">SPORT'S COLLECTION</a>
+  </li>
+  <li class="f-item">
+    <a class="flink" href="classic.html">CLASSIC'S COLLECTION</a>
+  </li>
+  </ul>
+</div><!--end of categories card-->
+
+
+<!--start of social media card-->
+<div class="card text-center mx-auto"  style="width: 18rem;">
+<div class="card-header">
+SOCIAL MEDIA
+</div>
+<ul class="list-group list-group-flush" >
+<li class="nav-item" >
+  <a class="icon" href="#"><img src="pictures/email.png" alt="" class="icon1"><h6 class="link1">https://www.friux.lk</h6></a>
+</li>
+<li class="nav-item" >
+  <a class="icon" href="#"><img src="pictures/facebook.png" alt="" class="icon1"><h6 class="link1">https://www.facebook/friux.com</h6></a>
+</li>
+<li class="nav-item" >
+  <a class="icon" href="#"><img src="pictures/phone.png" alt="" class="icon1"><h6 class="link1">+946612345678</h6></a>
+</li>
+<li class="nav-item" >
+  <a class="icon" href="#"><img src="pictures/insta.png" alt="" class="icon1"><h6 class="link1">https://www.instagram/friux.com</h6> </a>
+</li>
+</ul>
+</div><!--end of social media card-->
+
+
+</div><!--end of row-->
+</div><!--end of jumbotron footer-->
+
+
+<!--start of alert footer-->
+<div class="alert "  id="footer" role="alert">
+  <h6 id="footertext">&copy;2021.FRILUX.All Rights Reserved...</h6>
+</div><!--end of alert footer-->
+
+
+</div><!--end of container-->
+</body>
+</html>

@@ -1,0 +1,255 @@
+body{
+  background-color: black;
+}
+/* container */
+div.container{
+  padding: 0px;
+background-color: #E6E6FA;
+  font-family: 'Allerta Stencil', sans-serif;
+}
+
+/* navigation bar  */
+nav.navbar{
+background-color:#053E80;
+
+}
+
+/* logo */
+a.navbar-brand{
+  color: #FEFFFF;
+}
+
+a.nav-link{
+  color: #FEFFFF;
+}
+
+
+a.active{
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+/* navigation list */
+li.f-item{
+    margin-top: 30px;
+
+}
+
+.flink{
+  color: #17252A;
+}
+
+#navbardrop1{
+  color: black;
+
+}
+
+
+
+a.nav-link:hover{
+  text-decoration: underline;
+
+}
+a.active{
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+/*navigation dropdown */
+div.dropdown-menu{
+background-color: #053E80;
+padding: 0px;
+
+
+}
+
+a.dropdown-item{
+color: white;
+padding: 0px;
+margin-bottom: 10px;
+
+}
+
+a.dropdown-item:hover{
+  text-decoration: underline;
+
+}
+
+a.dropdown-item.active{
+    background-color: white;
+    color: orange;
+}
+/* end of navigation */
+
+/* alert website heading */
+div.alert{
+  background-color: lightgrey;
+}
+
+/* used to make website responsive */
+@media screen and (max-width: 650px) {
+ .column {
+   width: 100%;
+   display: block;
+ }
+}
+
+/* jumbotron  */
+#jumbo1{
+  height: 200px;
+}
+
+
+#jumbo2{
+  height: 500px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+
+}
+
+
+.card {
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#rowabtus{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#imageabtus{
+  width: 100%;
+  height: 100%;
+}
+
+/* paragraphs of aboutus page */
+#abtUs{
+  width: 500px;
+  height: 600px;
+  text-align: center;
+}
+
+#abtUs1{
+  width: 500px;
+  height: 600px;
+  text-align: center;
+  padding-top: 200px;
+  color: black;
+}
+
+/* brand card */
+.card2 {
+        display: inline-block;
+        width: 530px;
+        height: 450px;
+        margin-bottom: 20px;
+
+    }
+
+    h3.brandh3{
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+#brand{
+  width: 150px;
+  height: 130px;
+  padding-right: 20px;
+  border-radius:10px;
+  padding-bottom: 40px;
+}
+/* end of brand card */
+
+
+div.donate{
+  color: black;
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+div.cardimg{
+  height: 450px;
+  margin: 0px;
+  padding-top: 30px;
+
+
+}
+
+button.buttond{
+  border-style: solid;
+  border-color: black;
+  color: black;
+}
+
+.title {
+ color: grey;
+}
+
+.button {
+ border: none;
+ outline: 0;
+ display: inline-block;
+ padding: 0px;
+ color: white;
+ background-color: #000;
+ text-align: center;
+ cursor: pointer;
+ width: 100%;
+ margin: 0px;
+}
+
+.button:hover {
+ background-color: #555;
+}
+
+/* start of footer */
+ul.list-group{
+  list-style: none;
+}
+
+img.icon1{
+  width: 50px;
+  height: 50px;
+}
+
+
+h6{
+  text-align: center;
+    color: black;
+}
+
+h5{
+  text-align: center;
+}
+
+div.jumbotron{
+  margin: 0px;
+  background-color: #E6E6FA;
+}
+
+a:hover{
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+
+
+a.alink:hover{
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+
+#footer{
+  background-color: #053E80;
+  color: white;
+}
+
+#footertext{
+  color: white;
+}
+/* end of footer */
